@@ -6,12 +6,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BaseImport {
-
-	protected String getFileName() {
-		return null;
-	}
-
+public abstract class BaseImport {
+	
+	abstract protected String getFileName() ;
+	
 	private List<String> lines = new ArrayList<String>();
 
 	public void importFile() {
@@ -40,6 +38,10 @@ public class BaseImport {
 		return this.lines;
 	}
 
+	public void count() {
+		System.out.println("資料筆數:" + lines.size());
+	}
+	
 	public void show() {
 		for(String line : lines) {
 			System.out.println(line);
